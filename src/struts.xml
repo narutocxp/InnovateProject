@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN" "struts-2.1.7.dtd" >
+<struts>
+<!-- 配置相关的将action交给spring管理的信息 -->
+<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+<constant name="struts.objectFactory" value="spring"></constant>
+</struts>
