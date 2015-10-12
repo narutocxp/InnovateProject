@@ -1,24 +1,24 @@
-package com.util;
+package com.common.util;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * 反射工具类
+ * 反射工具�?
  * 
  * @author HeHangjie
  * 
  */
 public class EntityReflect {
 	/**
-	 * 转换有值的属性为HQL查询语句
+	 * 转换有�?的属性为HQL查询语句
 	 * 
 	 * 各属性间的查询语句以AND连接
 	 * 
-	 * 默认String类型属性为like语句 , 其它类型为=语句
+	 * 默认String类型属�?为like语句 , 其它类型�?语句
 	 * 
-	 * 未考虑处理日期期间的问题
+	 * 未�?虑处理日期期间的问题
 	 * 
 	 * @param entity
 	 * @return
@@ -33,12 +33,12 @@ public class EntityReflect {
 		StringBuffer hql = new StringBuffer("from "
 				+ entity.getClass().getSimpleName() + " where 1=1 ");
 
-		// 获取实体类的所有属性
+		// 获取实体类的�?��属�?
 		Field[] field = entity.getClass().getDeclaredFields();
 
 		// 第一个字段是serialVersionUID，第二个是主键，不做
 		for (int i = 2; i < field.length; i++) {
-			// 获取属性名字
+			// 获取属�?名字
 			String name = field[i].getName();
 			String getName = "get" + name.substring(0, 1).toUpperCase()
 					+ name.substring(1);
@@ -53,9 +53,9 @@ public class EntityReflect {
 					continue;
 				}
 
-				// 获取属性类型
+				// 获取属�?类型
 				String type = field[i].getGenericType().toString();
-				// 这里只支持String与非String，日期类型如何处理需要考虑
+				// 这里只支持String与非String，日期类型如何处理需要�?�?
 				if (type.equals("class java.lang.String")) {
 					hql.append(" and " + name + " like '%" + value + "%' ");
 				}
