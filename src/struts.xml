@@ -2,6 +2,14 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN" "struts-2.1.7.dtd" >
 <struts>
 <!-- 配置相关的将action交给spring管理的信息 -->
-<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
-<constant name="struts.objectFactory" value="spring"></constant>
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<constant name="struts.multipart.maxSize" value="209715200"></constant>
+	<!-- 加载Spring的插件的常量 -->
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<constant name="struts.objectFactory.spring.autoWire"
+		value="name">
+	</constant>
 </struts>
